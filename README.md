@@ -11,9 +11,9 @@ When a user completes a task before its due date they will gain a point. else lo
 
 Group members:
 
-Luke Bas
-Dylan Mahyuddin
-Mahan Mehdipour
-Behnaz Najafi
-Juliette R Hope Golbahar Poirier-Mozun
+Luke Bas,
+Dylan Mahyuddin,
+Mahan Mehdipour,
+Behnaz Najafi,
+Juliette R Hope Golbahar Poirier-Mozun,
 Michael Ivanov
