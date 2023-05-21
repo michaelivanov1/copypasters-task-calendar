@@ -1,4 +1,4 @@
-Semester 6 Managing Software Projects 2 group project. basically a task tracking app which features a calendar view.
+A fullstack task tracking app with user specific growth stats.
 
 Users can login/register with hashed passwords and then start adding tasks to either a calendar by double clicking on a tile, or adding task to a task list view.
 
