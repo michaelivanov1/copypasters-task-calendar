@@ -17,3 +17,10 @@ Mahan Mehdipour,
 Behnaz Najafi,
 Juliette R Hope Golbahar Poirier-Mozun,
 Michael Ivanov
+
+```
+clone repository to run locally:
+  in frontend & backend folder: npm i
+  project/frontend: npm start
+  project/backend/app: npx nodemon app
+```
