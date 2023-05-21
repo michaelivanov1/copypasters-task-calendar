@@ -1,6 +1,5 @@
-import React, { useState, useReducer } from "react";
+import React from "react";
 import { ThemeProvider } from "@mui/material/styles";
-//import Logo from "./worldimage.png";
 import { Card, CardHeader, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import theme from "../theme";

@@ -1,33 +1,15 @@
 import React, { useReducer, useEffect } from "react";
 import { ThemeProvider } from "@mui/material/styles";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableRow from "@mui/material/TableRow";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
 import AddTask from "./AddTask";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
-import { DataGrid, GridValueGetterParams } from "@mui/x-data-grid";
-import {
-  Card,
-  TextField,
-  Autocomplete,
-  CardHeader,
-  CardContent,
-  Typography,
-  Tooltip,
-} from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
+import { CardHeader } from "@mui/material";
 import theme from "../../theme";
 import "../../App.css";
-import {useAuth} from "../Auth";
+import { useAuth } from "../Auth";
 
 const ListTasks = (props) => {
   const initialState = {
-    //snackBarMsg: "",
     msg: "",
     contactServer: false,
     advisories: [],
@@ -71,7 +53,7 @@ const ListTasks = (props) => {
       width: 130,
       sortable: true,
       valueGetter: (params) =>
-      `${state.difficulties[params.row.difficulty]}`,
+        `${state.difficulties[params.row.difficulty]}`,
       sortComparator: (v1, v2) => state.difficulties.indexOf(v1) - (state.difficulties.indexOf(v2)),
     },
   ];
@@ -84,7 +66,6 @@ const ListTasks = (props) => {
   const [state, setState] = useReducer(reducer, initialState);
 
   const GRAPHURL = "http://localhost:5000/graphql";
-  //const GRAPHURL = "/graphql";
 
   useEffect(() => {
     fetchTasksForUser(auth.user);
@@ -117,7 +98,6 @@ const ListTasks = (props) => {
       });
 
       console.log(payload);
-      //console.log(state.difficulties.indexOf('hard'));
 
       return payload.data.tasksforuser;
     } catch (error) {
@@ -136,37 +116,37 @@ const ListTasks = (props) => {
 
   return (
     <ThemeProvider theme={theme}>
-        <CardHeader
-          title="Your Tasks"
-          style={{ textAlign: "center", marginTop: 20 }}
+      <CardHeader
+        title="Your Tasks"
+        style={{ textAlign: "center", marginTop: 20 }}
+      />
+      <div style={{ height: "500px", maxHeight: "600px", width: "100%" }}>
+        <DataGrid
+          style={{ width: '85%', height: '75%' }}
+          getRowId={(row) => row._id}
+          rows={state.listForTable}
+          columns={columns}
+          pageSize={6}
+          rowsPerPageOptions={[6]}
+          onRowClick={handleClick}
         />
-          <div style={{ height: "500px", maxHeight: "600px", width: "100%" }}>
-            <DataGrid
-              style={{ width: '85%', height: '75%' }}
-              getRowId={(row) => row._id}
-              rows={state.listForTable}
-              columns={columns}
-              pageSize={6}
-              rowsPerPageOptions={[6]}
-              onRowClick={handleClick}
-            />
-            </div>
-          
+      </div>
 
-          {state.isOpen && (
-            <AddTask
-              open={state.isOpen}
-              onClose={handleClose}
-              id={state.selectedId}
-              dataFromChild={sendMessageToSnackbar}
-            ></AddTask>
-          )}
-          <ControlPointIcon
-            fontSize="large"
-            style={{ position: "absolute", bottom: "50px", right: "50px" }}
-            onClick={(e) => handleClick(null)}
-            className="addicon"
-          ></ControlPointIcon>
+
+      {state.isOpen && (
+        <AddTask
+          open={state.isOpen}
+          onClose={handleClose}
+          id={state.selectedId}
+          dataFromChild={sendMessageToSnackbar}
+        ></AddTask>
+      )}
+      <ControlPointIcon
+        fontSize="large"
+        style={{ position: "absolute", bottom: "50px", right: "50px" }}
+        onClick={(e) => handleClick(null)}
+        className="addicon"
+      ></ControlPointIcon>
     </ThemeProvider>
   );
 };

@@ -1,16 +1,10 @@
-import React, { useState, useReducer } from "react";
+import React, { useReducer } from "react";
 import { ThemeProvider } from "@mui/material/styles";
-// import Logo from "./worldimage.png"
 import {
-  AppBar,
-  Toolbar,
   Card,
   CardHeader,
-  CardContent,
-  Typography,
   Button,
   TextField,
-  Snackbar,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import theme from "../theme";
@@ -19,9 +13,6 @@ import "../App.css";
 import Logo from "../images/logo.png";
 import { useAuth } from './Auth';
 
-
-//const bcrypt = require('bcrypt');
-//import bcrypt from 'bcrypt';
 
 const Login = (props) => {
 

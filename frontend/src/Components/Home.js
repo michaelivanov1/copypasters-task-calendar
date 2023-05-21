@@ -13,13 +13,7 @@ import CompletedTasks from "./Calendar/CompletedTasks";
 
 import { ThemeProvider } from "@mui/material/styles";
 import {
-  Autocomplete,
-  TextField,
   Card,
-  CardHeader,
-  CardContent,
-  Typography,
-  Button,
 } from "@mui/material";
 import theme from "../theme";
 import "../App.css";
@@ -36,20 +30,10 @@ const Home = (props) => {
     currentView: "Calendar",
   };
 
-  // const GRAPHURL = "http://localhost:5000/graphql";
-  const GRAPHURL = "/graphql";
-
   const reducer = (state, newState) => ({ ...state, ...newState });
   const [state, setState] = useReducer(reducer, initialState);
 
   const drawerWidth = 240;
-
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
 
   const sendMessageToSnackbar = (msg) => {
     props.dataFromChild(msg);

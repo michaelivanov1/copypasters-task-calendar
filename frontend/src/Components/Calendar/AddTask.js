@@ -1,10 +1,8 @@
 import React, { useReducer, useEffect, useState } from "react";
-import { ThemeProvider } from "@mui/material/styles";
 import {
   Autocomplete,
   TextField,
   Card,
-  CardHeader,
   CardContent,
   Typography,
   Button,
@@ -13,9 +11,7 @@ import {
   Checkbox,
 } from "@mui/material";
 import { DateTimePickerComponent } from "@syncfusion/ej2-react-calendars";
-import theme from "../../theme";
 import "../../App.css";
-import { IntegrationInstructionsRounded } from "@mui/icons-material";
 import { useAuth } from "../Auth";
 
 const AddTask = (props) => {

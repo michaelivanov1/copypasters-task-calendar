@@ -1,7 +1,6 @@
 // @ts-nocheck
 
-import React, { useReducer, useEffect, useState } from "react";
-import { SampleBase } from "./sample-base";
+import React, { useReducer, useEffect } from "react";
 import {
   ScheduleComponent,
   ViewsDirective,
@@ -17,28 +16,18 @@ import {
 } from "@syncfusion/ej2-react-schedule";
 //import "./schedule-component.css";
 import { CheckBoxComponent } from "@syncfusion/ej2-react-buttons";
-import { extend, L10n } from "@syncfusion/ej2-base";
+import { L10n } from "@syncfusion/ej2-base";
 import { DateTimePickerComponent } from "@syncfusion/ej2-react-calendars";
-import { ColorPickerComponent } from '@syncfusion/ej2-react-inputs';
-import { updateSampleSection } from "./sample-base";
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
-import { PropertyPane } from "./property-pane";
-import dataSource from "./datasource.json";
 import {
   DataManager,
-  WebApiAdaptor,
   Query,
   GraphQLAdaptor,
 } from "@syncfusion/ej2-data";
 import {
   Card,
-  CardHeader,
-  CardContent,
-  Button,
-  TextField,
 } from "@mui/material";
 import "../../App.css";
-import { findByTestId } from "@testing-library/react";
 import { useAuth } from "../Auth";
 
 

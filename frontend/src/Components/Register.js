@@ -1,13 +1,8 @@
-import React, { useState, useReducer } from "react";
+import React, { useReducer } from "react";
 import { ThemeProvider } from "@mui/material/styles";
-// import Logo from "./worldimage.png"
 import {
-  AppBar,
-  Toolbar,
   Card,
   CardHeader,
-  CardContent,
-  Typography,
   Button,
   TextField,
 } from "@mui/material";
@@ -129,7 +124,7 @@ const Register = () => {
               onChange={handlePasswordFunction}
             />
           )}
-          <Card style={{border: "none", boxShadow: "none"}} >
+          <Card style={{ border: "none", boxShadow: "none" }} >
             <Button
               style={{ fontSize: 10 }}
               color="primary"
