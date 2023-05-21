@@ -9,15 +9,6 @@ Created tasks are editable/deletable. Tasks can be marked as complete which will
 
 When a user completes a task before its due date they will gain a point. else lose a point. A "growth stats" component displays a graph based on the users points. 
 
-Group members:
-
-Luke Bas,
-Dylan Mahyuddin,
-Mahan Mehdipour,
-Behnaz Najafi,
-Juliette R Hope Golbahar Poirier-Mozun,
-Michael Ivanov
-
 ```
 clone repository to run locally:
   in frontend & backend folder: npm i
